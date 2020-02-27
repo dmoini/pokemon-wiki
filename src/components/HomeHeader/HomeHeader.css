@@ -1,9 +1,6 @@
-/* Navbar {
-    position: sticky;
-    top: 0;
-} */
-
-.brandName {
+.navbar-brand-custom {
+    width: 100%;
+    text-align: center;
     font-size: 100px;
-    text-align: center !important;
+    font-family: "Press Start 2P";
 }

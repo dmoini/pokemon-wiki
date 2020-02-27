@@ -1,14 +1,16 @@
-import './HomeHeader.css'
+import "./HomeHeader.css";
 
-import Navbar from 'react-bootstrap/Navbar';
-import React from 'react'
+import Navbar from "react-bootstrap/Navbar";
+import React from "react";
 
-function HomeHeader() {
-    return (
-      <Navbar bg="primary" expand="lg">
-        <Navbar.Brand href="App.js" className="brandName">Pokemon Wiki</Navbar.Brand>
+export default function HomeHeader() {
+  return (
+    <div className="center-navbar">
+      <Navbar bg="danger" expand="lg">
+        <Navbar.Brand href="App.js" className="navbar-brand-custom">
+          Pokemon Wiki
+        </Navbar.Brand>
       </Navbar>
-    )
+    </div>
+  );
 }
-
-export default HomeHeader
