@@ -1,14 +1,16 @@
-import './App.css';
+import "./App.css";
 
-import HomeHeader from './components/HomeHeader/HomeHeader'
-import React from 'react';
+import HomeHeader from "./components/HomeHeader/HomeHeader";
+import React from "react";
+import SearchHeader from "./components/SearchHeader/SearchHeader";
+import SearchResult from "./components/SearchResult/SearchResult";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <HomeHeader/>
+      <HomeHeader />
+      <SearchHeader />
+      <SearchResult />
     </div>
   );
 }
-
-export default App;
