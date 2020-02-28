@@ -6,7 +6,7 @@ import React from "react";
 export default function SearchResultError({ searchType, searchQuery }) {
   return (
     <Alert key="alert" variant="danger">
-      Error
+      Could not find "{searchQuery}" for {searchType} search.
     </Alert>
   );
 }
