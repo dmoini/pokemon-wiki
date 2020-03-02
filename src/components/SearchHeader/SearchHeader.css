@@ -1,0 +1,13 @@
+.searchbar {
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#dropdown {
+  width: 100px;
+}
