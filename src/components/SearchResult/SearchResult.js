@@ -1,6 +1,8 @@
 import "./SearchResult.css";
 
 import MoveSearchResult from "../MoveSearchResult/MoveSearchResult";
+import PokemonSearchResult from "../PokemonSearchResult/PokemonSearchResult";
+import ItemSearchResult from "../ItemSearchResult/ItemSearchResult";
 import React from "react";
 import SearchResultError from "../SearchResultError/SearchResultError";
 
@@ -11,11 +13,12 @@ export default function SearchResult({
   error,
 }) {
   const SearchResultComponentType =
-    searchType === "Pokemon"
-      ? MoveSearchResult
-      : searchType === "Move"
-      ? MoveSearchResult
-      : MoveSearchResult;
+    searchType === "Pokemon" ? 
+    PokemonSearchResult : 
+    searchType === "Move" ? 
+    MoveSearchResult: 
+    searchType === "Item" ? 
+    ItemSearchResult: ItemSearchResult;
 
   return error ? (
     <SearchResultError searchQuery={searchQuery} searchType={searchType} />
