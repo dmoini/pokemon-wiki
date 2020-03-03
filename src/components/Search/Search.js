@@ -25,6 +25,7 @@ export default function SearchHeader() {
   const handleSearch = () => {
     if (searchQuery === "") {
       window.alert("Please enter a non-empty search query.");
+      return;
     }
     searchCategory(searchType, searchQuery)
       .then(res => {
