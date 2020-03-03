@@ -1,20 +1,30 @@
 import "./MoveSearchResult.css";
 
+
+
 import React from "react";
 
 export default function MoveSearchResult({ data }) {
   return (
-    <div>
-      <h2>{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
-      <div>
-        <b>Accuracy</b>: {data.accuracy}
-      </div>
-      <div>
-        <b>Move PP</b>: {data.pp}
-      </div>
-      <div>
-        <b>Power</b>: {data.power}
-      </div>
-    </div>
+
+
+<body className="body">
+  <div id="header">
+    <img id="pokeImage" src=".../../images/disk"/>
+  </div>
+
+  <div id="basicNfo">
+      This move is called {data.name.charAt(0).toUpperCase() + data.name.slice(1)}. The accuracy is {data.accuracy}.
+       The move has {data.pp} PP. The power of this move is {data.power}
+  </div>
+</body>
+
   );
 }
+
+
+// import Background from "../../images/pokemon-background.png";
+//       <div
+// id="background-img"
+// style={{ backgroundImage: `url(${Background})` }}
+// >
