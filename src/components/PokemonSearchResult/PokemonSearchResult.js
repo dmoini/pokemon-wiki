@@ -14,7 +14,7 @@ export default function PokemonSearchResult({ data }) {
           alt={data.name}
         />
       </h2>
-      <div className="basicNfo">
+      <div className="basicInfo">
         <p>
           <b>Height: </b>
           {data.height}
