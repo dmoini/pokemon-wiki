@@ -3,6 +3,7 @@
     height: 150px;
 } */
 
+<<<<<<< HEAD
 .body {
   margin-left: 20px;
   margin-top: 20px;
@@ -39,3 +40,47 @@
   grid-column-end: 6;
   /* border: 3px dashed blue; */
 }
+=======
+
+.grid {
+    display: grid;
+    grid-template-columns: 30% 10% 30% 30%;
+    grid-template-rows: 1;
+    grid-gap: 20px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .image {
+    padding-top: 10%;
+    padding-bottom: 10%;
+    grid-column: 2;
+    background: darkcyan;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+  }
+
+
+  .info {
+    grid-column: 3;
+    background: darkcyan;
+    border: 1px solid black;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    font-family: "Press Start 2P";
+
+  }
+
+  #disk-image {
+      height: 50px;
+      width: 50px;
+  }
+
+
+
+
+  
+>>>>>>> 3897c19eaef7a3be84a96019ea050e204b1fb19f
