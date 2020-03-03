@@ -1,0 +1,40 @@
+.body {
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background: lightgreen;
+  display: grid;
+  grid-template-columns: 10% 40% 10% 10% 10% 10% 10%;
+  grid-template-rows: 100%;
+  border: 3px solid black;
+}
+
+#header {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  /* border: 3px dashed red; */
+}
+
+#pokeImage {
+  width: 150px;
+  height: 150px;
+}
+
+.basicNfo {
+  padding-top: 30px;
+  text-align: center;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  /* border: 3px dashed blue; */
+}
+
+.types {
+  padding-top: 30px;
+  grid-column-start: 5;
+  grid-column-end: 7;
+  /* border: 3px dashed yellow; */
+}
+
+
+
