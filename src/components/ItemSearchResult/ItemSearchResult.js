@@ -4,10 +4,10 @@ import React from "react";
 
 export default function ItemSearchResult({ data }) {
   return (
-    <div>
+    <div className="content">
       <h2>{data.name.charAt(0).toUpperCase() + data.name.slice(1)}</h2>
-      
-      <h2>You've reached the Item Search Result page!</h2>
+      <img id="itemImage" src={data.sprites.default} />
+      <p><b>{data.effect_entries[0].short_effect}</b></p>
     </div>
   );
 }

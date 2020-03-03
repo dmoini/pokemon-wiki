@@ -6,10 +6,9 @@ export default function PokemonSearchResult({ data }) {
   return (
     <div className="body">
       <h2 id="header">
-        <img id="pokeImage" src={data.sprites["front_default"]} alt={data.name}/>
         {data.name.charAt(0).toUpperCase() + data.name.slice(1)} (#{data.id})
+        <img id="pokeImage" src={data.sprites["front_default"]} alt={data.name} />
       </h2>
-      
       <div className="basicNfo">
         <p><b>Height: </b>{data.height}</p>
         <p><b>Weight: </b>{data.weight}</p>
