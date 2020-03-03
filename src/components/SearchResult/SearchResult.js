@@ -1,5 +1,6 @@
 import "./SearchResult.css";
 
+import MoveSearchResult from "../MoveSearchResult/MoveSearchResult";
 import React from "react";
 import SearchResultError from "../SearchResultError/SearchResultError";
 
@@ -9,6 +10,13 @@ export default function SearchResult({
   searchResult,
   error,
 }) {
+  const Component =
+    searchType === "Pokemon"
+      ? MoveSearchResult
+      : searchType === "Move"
+      ? MoveSearchResult
+      : MoveSearchResult;
+
   return error ? (
     <SearchResultError searchQuery={searchQuery} searchType={searchType} />
   ) : (
@@ -16,7 +24,10 @@ export default function SearchResult({
       <div>
         {searchType}: {searchQuery}
       </div>
-      <div>{JSON.stringify(searchResult)}</div>
+      <br />
+      {/* <div>{JSON.stringify(searchResult)}</div> */}
+      <br />
+      <Component data={searchResult} />
     </div>
   );
 }
