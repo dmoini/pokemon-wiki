@@ -1,44 +1,20 @@
 import "./MoveSearchResult.css";
-import Image from "../../images/disk.png"
 
-
+import Image from "../../images/disk.png";
 import React from "react";
+import { capitalize } from "../../helperFunctions";
 
 export default function MoveSearchResult({ data }) {
   return (
-
-<section class="grid">
-  <div class="image">
-  <img id="disk-image" src={Image}/>
-  
-  </div>
-
-  <div class="info">
-  This move is called {data.name.charAt(0).toUpperCase() + data.name.slice(1)}. The accuracy is {data.accuracy}. 
-  The move has {data.pp} PP. The power of this move is {data.power}.
-  
-
-  </div>
-</section>
-
-
-// <body className="body">
-//   <div id="header">
-//     <img id="pokeImage" src=".../../images/disk"/>
-//   </div>
-
-//   <div id="basicNfo">
-//       This move is called {data.name.charAt(0).toUpperCase() + data.name.slice(1)}. The accuracy is {data.accuracy}.
-//        The move has {data.pp} PP. The power of this move is {data.power}
-//   </div>
-// </body>
-
+    <section className="grid">
+      <div className="image">
+        <img id="disk-image" src={Image} alt="Disk" />
+      </div>
+      <div className="info pt-2">
+        This move is called {capitalize(data.name)}. The accuracy is{" "}
+        {data.accuracy}. The move has {data.pp} PP. The power of this move is{" "}
+        {data.power}.
+      </div>
+    </section>
   );
 }
-
-
-// import Background from "../../images/pokemon-background.png";
-//       <div
-// id="background-img"
-// style={{ backgroundImage: `url(${Background})` }}
-// >
