@@ -10,7 +10,7 @@ export default function SearchResult({
   searchResult,
   error,
 }) {
-  const Component =
+  const SearchResultComponentType =
     searchType === "Pokemon"
       ? MoveSearchResult
       : searchType === "Move"
@@ -27,7 +27,7 @@ export default function SearchResult({
       <br />
       {/* <div>{JSON.stringify(searchResult)}</div> */}
       <br />
-      <Component data={searchResult} />
+      <SearchResultComponentType data={searchResult} />
     </div>
   );
 }
