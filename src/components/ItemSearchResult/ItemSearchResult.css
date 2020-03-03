@@ -1,14 +1,14 @@
 #itemImage {
-  width: 100px;
-  height: 100px;
+    width: 100px;
+    height: 100px;
 }
 
 .content {
-  margin-top: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-  background: lightcoral;
-  border: 3px solid black;
-  text-align: center;
-  font-family: "Press Start 2P";
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background: lightcoral;
+    border: 3px solid black;
+    text-align: center;
+    font-family: "Press Start 2P";
 }
