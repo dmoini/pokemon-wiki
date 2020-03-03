@@ -46,13 +46,35 @@ export default function SearchHeader() {
   };
 
   const searchCategory = (searchType, searchQuery) => {
+    let formattedSearchQuery = searchQuery
+      .toLowerCase()
+      .split(" ")
+      .join("-");
+    if (
+      searchType === "Item" &&
+      searchQuery.endsWith("ball") &&
+      !searchQuery.includes("-")
+    ) {
+      formattedSearchQuery =
+        searchQuery.slice(0, searchQuery.length - 4) +
+        "-" +
+        searchQuery.slice(searchQuery.length - 4);
+    }
     switch (searchType) {
       case "Pokemon":
-        return searchPokemon(searchQuery);
+        return searchPokemon(formattedSearchQuery);
       case "Move":
-        return searchMove(searchQuery);
+        return searchMove(formattedSearchQuery);
       default:
-        return searchItem(searchQuery);
+        return searchItem(formattedSearchQuery);
+    }
+  };
+
+  const handleEnterKey = e => {
+    // e.preventDefault();
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSearch();
     }
   };
 
@@ -93,6 +115,9 @@ export default function SearchHeader() {
                 placeholder="Search"
                 onChange={e => {
                   setSearchQuery(e.target.value);
+                }}
+                onKeyPress={e => {
+                  handleEnterKey(e);
                 }}
               />
               <Button variant="danger" onClick={handleSearch}>
