@@ -7,7 +7,7 @@ export default function HomeHeader() {
   return (
     <div className="center-navbar">
       <Navbar bg="danger" expand="lg">
-        <Navbar.Brand href="App.js" className="navbar-brand-custom">
+        <Navbar.Brand href="/" className="navbar-brand-custom">
           Pokemon Wiki
         </Navbar.Brand>
       </Navbar>
