@@ -15,7 +15,7 @@ import { searchItem, searchMove, searchPokemon } from "../../api";
 import Background from "../../images/pokemon-background.png";
 import SearchResult from "../SearchResult/SearchResult";
 
-export default function SearchHeader() {
+export default function Search({ setData }) {
   const [searchType, setSearchType] = useState("Pokemon");
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResult, setSearchResult] = useState({});
@@ -34,6 +34,7 @@ export default function SearchHeader() {
           searchQuery,
         });
         setSearchResult({ ...res, searchType });
+        setData({ ...res, searchType });
         setError(false);
       })
       .catch(() => {
@@ -42,6 +43,7 @@ export default function SearchHeader() {
           searchQuery,
         });
         setSearchResult({});
+        setData({});
         setError(true);
       });
   };
@@ -72,7 +74,6 @@ export default function SearchHeader() {
   };
 
   const handleEnterKey = e => {
-    // e.preventDefault();
     if (e.key === "Enter") {
       e.preventDefault();
       handleSearch();

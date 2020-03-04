@@ -2,10 +2,16 @@ import "./PokemonSearchResult.css";
 
 import React from "react";
 import { capitalize } from "../../helperFunctions";
+import history from "../../history";
 
 export default function PokemonSearchResult({ data }) {
   return (
-    <div className="body">
+    <div
+      className="body"
+      onClick={() => {
+        history.push("/pokemon");
+      }}
+    >
       <h2 id="header">
         {capitalize(data.name)} (#{data.id})
         <img

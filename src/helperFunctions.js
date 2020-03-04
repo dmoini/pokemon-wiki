@@ -8,4 +8,10 @@ const capitalize = s => {
   return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
 };
 
-export { capitalize };
+const checkInvalidAccessToPage = data => {
+  if (Object.entries(data).length === 0) {
+    window.location = "/";
+  }
+};
+
+export { capitalize, checkInvalidAccessToPage };

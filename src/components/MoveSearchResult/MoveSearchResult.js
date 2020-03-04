@@ -3,10 +3,16 @@ import "./MoveSearchResult.css";
 import Image from "../../images/disk.png";
 import React from "react";
 import { capitalize } from "../../helperFunctions";
+import history from "../../history";
 
 export default function MoveSearchResult({ data }) {
   return (
-    <section className="grid">
+    <section
+      className="grid"
+      onClick={() => {
+        history.push("/move");
+      }}
+    >
       <div className="image">
         <img id="disk-image" src={Image} alt="Disk" />
       </div>

@@ -22,14 +22,6 @@ export default function SearchResult({
   return error ? (
     <SearchResultError searchQuery={searchQuery} searchType={searchType} />
   ) : (
-    <div>
-      {/* <div>
-        {searchType}: {searchQuery}
-      </div>
-      <br />
-      <div>{JSON.stringify(searchResult)}</div>
-      <br /> */}
-      <SearchResultComponentType data={searchResult} />
-    </div>
+    <SearchResultComponentType data={searchResult} />
   );
 }
