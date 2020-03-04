@@ -5,7 +5,12 @@ import React from "react";
 
 export default function SearchResultError({ searchType, searchQuery }) {
   return (
-    <Alert key="alert" variant="danger" className="center mt-3" id="error">
+    <Alert
+      key="alert"
+      variant="danger"
+      className="center mt-3 text-center"
+      id="error"
+    >
       Could not find "{searchQuery}" for {searchType} search.
     </Alert>
   );
