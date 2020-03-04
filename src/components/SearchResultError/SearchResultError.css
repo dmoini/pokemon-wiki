@@ -1,0 +1,8 @@
+#error {
+    width: 800px;
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
