@@ -10,24 +10,59 @@ import { fetchUrl } from "../../api";
 export default function ItemRouter({ data }) {
   checkInvalidAccessToPage(data);
 
-  const [flingEffect, setFlingEffect] = useState("");
+  const [setFlingEffect, setPowerOutput, setHeldByPokemonOutput, 
+    setCostOutput, setVersionDetailsOutput, setRarityOutput] = useState("");
 
   if (data.fling_effect) {
     fetchUrl(data.fling_effect.url).then(res => {
       setFlingEffect(res.effect_entries[0].effect);
     });
   }
+  if (data.fling_power) {
+    fetchUrl(data.fling_power.url).then(res => {
+      setPowerOutput(res.effect_entries[0].effect);
+    });
+  }
+  if (data.pokemon) {
+    fetchUrl(data.pokemon.url).then(res => {
+      setHeldByPokemonOutput(res.effect_entries[0].effect);
+    });
+  }
+  if (data.cost) {
+    fetchUrl(data.cost.url).then(res => {
+      setCostOutput(res.effect_entries[0].effect);
+    });
+  }
+  if (data.version_details) {
+    fetchUrl(data.version_details.url).then(res => {
+      setVersionDetailsOutput(res.effect_entries[0].effect);
+    });
+  }
+  if (data.rarity) {
+    fetchUrl(data.rariry.url).then(res => {
+      setRarityOutput(res.effect_entries[0].effect);
+    });
+  }
+
 
   const flingPowerOutput = data.fling_power
-    ? `If applicable, the power of the move Fling when used with this item
+    ? `The power of the move Fling when used with this item
   is ${data.fling_power}`
     : "";
   const flingEffectOutput = data.fling_effect
-    ? ` The effect is ${flingEffect.toLowerCase()}`
+    ? ` The effect is ${data.flingEffect.toLowerCase()}`
     : "";
-  // console.log("fling effect:", data.fling_effect);
   const heldByPokemonOutput = data.pokemon
-    ? `The Pokemon that holds this item is ${data.pokemon}.`
+    ? `Pokemon who can be found holding this in the wild are ${data.pokemon}.`
+    : "";
+  const costOutput = data.cost
+    ? `The item costs ${data.cost} in game.`
+    : "";
+  const versionDetailsOutput = data.version_details
+    ? `The details for the version that this item is held in by the Pokémon are: ${data.version_details}.`
+    : "";
+  const rarityOutput = data.rarity
+    ? `TThe rarity of this item is ${data.version_details}.`
     : "";
 
   return (
@@ -35,18 +70,14 @@ export default function ItemRouter({ data }) {
       <HomeHeader />
       <div id="background" style={{ backgroundImage: `url(${Image})` }}>
         <div id="info">
-          This is the entry for the {data.name}. {data.effect_entries[0].effect}
-          The cost of this item in stores is {data.cost}. If applicable, the
-          Pokemon who can be found holding this in the wild are:{" "}
-          {data.held_by_pokemon.map(p => {
-            return <p key={p.pokemon.name}>{capitalize(p.pokemon.name)}</p>;
-          })}
-          {flingPowerOutput}
-          {flingEffectOutput}. {heldByPokemonOutput} The details for the version
-          that this item is held in by the Pokémon are: {data.version_details}.
-          The rarity of this item is {data.rarity}.
-        </div>
+          This is the entry for the {data.name}! {data.effect_entries[0].effect}
 
+          {flingPowerOutput}
+          {flingEffectOutput}. 
+          
+          {heldByPokemonOutput} {costOutput} 
+          {versionDetailsOutput} {rarityOutput}
+        </div>
         <br />
       </div>
     </div>
