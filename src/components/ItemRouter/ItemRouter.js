@@ -24,7 +24,6 @@ export default function ItemRouter({ data }) {
   const flingEffectOutput = data.fling_effect
     ? ` The effect is ${flingEffect.toLowerCase()}`
     : "";
-  // console.log("fling effect:", data.fling_effect);
   const heldByPokemonOutput = data.pokemon
     ? `The Pokemon that holds this item is ${data.pokemon}.`
     : "";
