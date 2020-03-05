@@ -3,6 +3,7 @@ import "./ItemRouter.css";
 import React, { useState } from "react";
 import { capitalize, checkInvalidAccessToPage } from "../../helperFunctions";
 
+import HomeHeader from "../HomeHeader/HomeHeader";
 import Image from "../../images/item_background.png";
 import { fetchUrl } from "../../api";
 
@@ -30,21 +31,24 @@ export default function ItemRouter({ data }) {
     : "";
 
   return (
-    <div id="background" style={{ backgroundImage: `url(${Image})` }}>
-      <div id="info">
-        This is the entry for the {data.name}. {data.effect_entries[0].effect}
-        The cost of this item in stores is {data.cost}. If applicable, the
-        Pokemon who can be found holding this in the wild are:{" "}
-        {data.held_by_pokemon.map(p => {
-          return <p key={p.pokemon.name}>{capitalize(p.pokemon.name)}</p>;
-        })}
-        {flingPowerOutput}
-        {flingEffectOutput}. {heldByPokemonOutput} The details for the version
-        that this item is held in by the Pokémon are: {data.version_details}.
-        The rarity of this item is {data.rarity}.
-      </div>
+    <div>
+      <HomeHeader />
+      <div id="background" style={{ backgroundImage: `url(${Image})` }}>
+        <div id="info">
+          This is the entry for the {data.name}. {data.effect_entries[0].effect}
+          The cost of this item in stores is {data.cost}. If applicable, the
+          Pokemon who can be found holding this in the wild are:{" "}
+          {data.held_by_pokemon.map(p => {
+            return <p key={p.pokemon.name}>{capitalize(p.pokemon.name)}</p>;
+          })}
+          {flingPowerOutput}
+          {flingEffectOutput}. {heldByPokemonOutput} The details for the version
+          that this item is held in by the Pokémon are: {data.version_details}.
+          The rarity of this item is {data.rarity}.
+        </div>
 
-      <br />
+        <br />
+      </div>
     </div>
   );
 }
