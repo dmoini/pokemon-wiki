@@ -8,6 +8,7 @@ import { capitalize } from "../../helperFunctions";
 
 export default function PokemonRouter({ data }) {
   checkInvalidAccessToPage(data);
+  
   return (
     <div> 
       <HomeHeader />
@@ -38,6 +39,10 @@ export default function PokemonRouter({ data }) {
           <b>Order: </b>
           {data.order}
         </p>
+        <p> 
+          <b>Type: </b>
+        {capitalize(data.types[0].type.name)}
+        </p>
         <p>
           <b>Height: </b>
           {data.height}
@@ -47,6 +52,7 @@ export default function PokemonRouter({ data }) {
           {data.weight}
         </p>
       </div>
+
 
     </div>
   </div>
