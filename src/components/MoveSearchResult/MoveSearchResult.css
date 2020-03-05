@@ -3,44 +3,6 @@
     height: 150px;
 } */
 
-<<<<<<< HEAD
-.body {
-  margin-left: 20px;
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  background: lightblue;
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 100%;
-  border: 3px dashed black;
-}
-
-
-#header {
-  /* box-align: center; */
-  grid-column-start: 2;
-  grid-column-end: 2;
-  /* border: 3px dashed red; */
-}
-  
-#pokeImage {
-  width: 150px;
-  height: 150px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.basicNfo {
-  text-align: center;
-  padding-top: 20px;
-  /* text-align: center; */
-  grid-column-start: 3;
-  grid-column-end: 6;
-  /* border: 3px dashed blue; */
-}
-=======
 
 .grid {
     display: grid;
@@ -83,4 +45,3 @@
 
 
   
->>>>>>> 3897c19eaef7a3be84a96019ea050e204b1fb19f
