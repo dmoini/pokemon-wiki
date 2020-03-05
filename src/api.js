@@ -24,6 +24,11 @@ const statusCheck = successStatuses => response => {
 
 const okCheck = statusCheck([HTTP_OK]);
 
+const fetchUrl = url =>
+  fetch(url)
+    .then(okCheck, emitNativeError)
+    .then(response => response.json());
+
 const query = (resource, param) =>
   fetch(`${urlFor(resource)}${param}`)
     .then(okCheck, emitNativeError)
@@ -33,4 +38,4 @@ const searchPokemon = param => query("pokemon", param);
 const searchMove = param => query("move", param);
 const searchItem = param => query("item", param);
 
-export { searchPokemon, searchMove, searchItem };
+export { searchPokemon, searchMove, searchItem, fetchUrl };
