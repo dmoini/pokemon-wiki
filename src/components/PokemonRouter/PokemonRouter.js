@@ -57,6 +57,10 @@ export default function PokemonRouter({ data }) {
             <b>Weight: </b>
             {data.weight}
           </p>
+          <p>
+            <b>Ability: </b>
+            {ability.effect_entries && ability.effect_entries[0].effect}
+          </p>
         </div>
       </div>
     </div>
