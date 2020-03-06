@@ -1,6 +1,6 @@
 import "./MoveSearchResult.css";
 
-import Image from "../../images/disk.png";
+import DiskImage from "../../images/disk.png";
 import React from "react";
 import { capitalize } from "../../helperFunctions";
 import history from "../../history";
@@ -14,7 +14,7 @@ export default function MoveSearchResult({ data }) {
       }}
     >
       <div className="image">
-        <img id="disk-image" src={Image} alt="Disk" />
+        <img id="disk-image" src={DiskImage} alt="Disk" />
       </div>
       <div className="info pt-2">
         This move is called {capitalize(data.name)}. The accuracy is{" "}
