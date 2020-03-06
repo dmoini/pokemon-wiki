@@ -4,15 +4,14 @@
     color: black;
     margin-left: 200px;
     margin-right: 200px;
-    margin-top: 210px;
+    margin-top: 20px;
 }
 
 #background {
     background-size: auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin-top: 200px;
+    margin-top: 20px;
     margin-left: 30px;
     margin-right: 30px;
-
 }
