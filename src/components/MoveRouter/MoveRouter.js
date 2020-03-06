@@ -2,13 +2,11 @@ import "./MoveRouter.css";
 
 import { capitalize, checkInvalidAccessToPage } from "../../helperFunctions";
 
-import DiskImage from "../../images/disk.png";
-import HomeHeader from "../HomeHeader/HomeHeader";
 import React from "react";
 
 export default function MoveRouter({ data }) {
   checkInvalidAccessToPage(data);
-  const Description = () => {
+  const moveEnglishDescription = () => {
     for (let i = 0; i < data.flavor_text_entries.length; i++) {
       if (data.flavor_text_entries[i].language.name === "en") {
         return data.flavor_text_entries[i].flavor_text;
@@ -20,9 +18,9 @@ export default function MoveRouter({ data }) {
       <div className="allInfo">
         <div className="nameAndDesc">
           <h2 id="name">
-            <u>{data.name.toUpperCase()}</u>
+            <u>{capitalize(data.name).toUpperCase()}</u>
           </h2>
-          <p id="description">{Description()}</p>
+          <p id="description">{moveEnglishDescription()}</p>
         </div>
         <div className="details">
           <p id="power">
@@ -32,10 +30,7 @@ export default function MoveRouter({ data }) {
             PP: <u>{data.pp}</u>
           </p>
           <p id="type">
-            Damage Type:{" "}
-            <u>
-              {data.type.name.charAt(0).toUpperCase() + data.type.name.slice(1)}
-            </u>
+            Damage Type: <u>{capitalize(data.type.name)}</u>
           </p>
         </div>
       </div>
