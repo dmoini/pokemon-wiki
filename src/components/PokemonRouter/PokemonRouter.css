@@ -1,0 +1,23 @@
+.bod {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background: lightgreen;
+    border: 6px solid black;
+  }
+  
+  
+  #head {
+    padding-top: 30px;
+    font-size: 80px;
+    text-align: center;
+
+  }
+  
+  .Info {
+    font-size: 20px;
+    padding-top: 30px;
+    text-align: center;
+
+  }

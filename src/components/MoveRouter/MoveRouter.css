@@ -1,13 +1,9 @@
-
-
 .allInfo {
   display: grid;
   min-height: 100vh;
   max-height: 100vh;
   grid-template-rows: 20vh 30vh 30vh 20vh;
   margin: 0;
-  /* padding-top: 10%;
-  padding-bottom: 10%; */
   padding: 0;
   background: darkcyan;
   border: 1px solid black;
